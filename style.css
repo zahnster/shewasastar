@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #065da6;
+}
+
 html {
   font-family: "Heebo", Helvetica, sans-serif;
 }
