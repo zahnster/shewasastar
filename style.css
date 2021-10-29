@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Heebo", Helvetica, sans-serif;
+}
+
+label {
+  display: block;
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 343px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.header h1 {
+  font-size: 1.325rem;
+  flex: 1;
+}
+
+.header p {
+  text-align: right;
+}
+
+.intro {
+  margin-bottom: 4rem;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.intro label {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.star p {
+  color: #777;
+  font-size: 0.75rem;
+}
+
+.star img {
+  width: 343px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.star h2 {
+  color: #0a396b;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.footer {
+  margin-top: 4rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}

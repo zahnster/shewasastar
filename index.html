@@ -1,0 +1,151 @@
+<html lang="en">
+  <head>
+    <title>She was a star...</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="intro">
+        <h1>Be the Star</h1>
+        <p>
+          Now's your chance to be that former star who now lives in [obscure
+          state of your choosing].
+        </p>
+
+        <p>
+          Add your headshot and see right before your eyes the star you once
+          were. Then feel free to screenshot it and share with all your friends.
+        </p>
+
+        <form>
+          <label
+            >Add your headshot: <input id="file-upload" type="file"
+          /></label>
+
+          <label
+            >Select your State:
+            <select id="select-state">
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota" selected>Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </label>
+        </form>
+      </div>
+
+      <div class="star">
+        <div class="header">
+          <h1>Sponsored Stories</h1>
+          <p>Ads by Yahoo</p>
+        </div>
+        <img
+          id="image"
+          src="https://placekitten.com/343/150"
+          alt="Headshot of that former star"
+        />
+        <h2>
+          She Was A Star, Now She Works In
+          <span id="display-state">Minnesota</span>
+        </h2>
+        <p>itsTheVibe</p>
+      </div>
+
+      <div class="footer">
+        <p>
+          This website does not use any cookies or other tracking entities, and
+          files loaded into the page are retained solely in the client browser
+          session. They are not uploaded to any server or service.
+        </p>
+
+        <p>Source code available here.</p>
+
+        <p>&copy; 2021 Jade Pennig.</p>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageField = document.getElementById("file-upload");
+        const imageEl = document.getElementById("image");
+        const select = document.getElementById("select-state");
+        const stateDisplay = document.getElementById("display-state");
+
+        imageField.addEventListener("change", handleFiles);
+
+        select.addEventListener("change", function (event) {
+          stateDisplay.innerText = event.target.value;
+        });
+
+        function handleFiles(ev) {
+          const files = ev.target.files;
+          const file = files[0];
+
+          if (file.type.startsWith("image/")) {
+            const reader = new FileReader();
+
+            reader.onload = (function () {
+              return function (e) {
+                image.src = e.target.result;
+              };
+            })(image);
+
+            reader.readAsDataURL(file);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
